@@ -31,7 +31,7 @@ export function DrawComponent() {
 
     const onDeleteTemplate = async (template: Templates) => {
         try {
-            const resonse = await fetch(`http://localhost:8080/template/${template.id}`, {
+            const resonse = await fetch(`${process.env.NEXt_API_BASE_URL}/template/${template.id}`, {
                 method: "delete"
             })
             if(resonse.status === 204) {
